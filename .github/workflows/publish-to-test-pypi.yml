@@ -4,11 +4,12 @@ on : [push]
 
 jobs:
   build:
+    runs-on :  ${{ matrix.os }}
     
     strategy:
       matrix:
         python-version: ['3.7']
-        
+        os: [ubuntu-latest]
     steps:
       - name: Check out source repository
         uses: actions/checkout@v2
